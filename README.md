@@ -17,7 +17,12 @@ When you are done, you should have the following four routes which render each o
 * `http://localhost:5000/artistlinks` -> `artist_links.html`
 * `http://localhost:5000/specific/song/<artist_name>` -> `specific_artist.html`
 
-Each of the templates should be rendered with actual data when those routes are reached when the Flask application runs. You do not need to edit the templates (but you will need to look at them to understand what data needs to be sent to them!).
+Each of the templates should be rendered with actual data when those routes are reached when the Flask application runs. 
+
+Check out the action on forms and end-locations of links in order to ensure that you send the correct data to templates and that the templates get the correct data!
+
+You may edit the templates (only slightly, you may not edit their structure), but you should not need to do so in any significant way.
+
 
 ### Part 2
 
