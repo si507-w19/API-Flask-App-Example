@@ -43,7 +43,7 @@ def artist_links():
 def specific_artist(artist_name):
     params = {}
     params['term'] = artist_name
-    resp = requests.get('https://itunes.apple.com/search?', params = params)
+    resp = requests.get('https://itunes.apple.com/search', params = params)
     data = json.loads(resp.text)
     return render_template('specific_artist.html', results= data['results'])
 
