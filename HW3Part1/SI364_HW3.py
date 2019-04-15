@@ -11,6 +11,15 @@ from flask import Flask, request, render_template
 app = Flask(__name__)
 app.debug = True
 
+## Tool functions (e.g. could go in a separate file...)
+def get_itunes_data(artist_search):
+    params = {}
+    params["term"] = artist_search
+    resp = requests.get('https://itunes.apple.com/search', params = params)
+    data = json.loads(resp.text)
+    return data
+    
+
 @app.route('/')
 def hello_world():
     return 'Hello World!'
@@ -25,12 +34,10 @@ def artist_form():
 
 @app.route('/artistinfo')
 def artist_info():
-    if request.method == 'GET':
+    if request.method == 'GET': # Just to ensure -- there should not be another case
         result = request.args
-        params = {}
-        params['term'] = result.get('artist')
-        resp = requests.get('https://itunes.apple.com/search?', params = params)
-        data = json.loads(resp.text)
+        artist_to_search = result.get('artist')
+        data = get_itunes_data(artist_to_search)
         return render_template('artist_info.html', objects = data['results'])
 
 @app.route('/artist_links')
