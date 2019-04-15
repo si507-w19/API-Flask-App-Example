@@ -11,7 +11,7 @@ from flask import Flask, request, render_template
 app = Flask(__name__)
 app.debug = True
 
-## Tool functions (e.g. could go in a separate file...)
+## Tool functions (e.g. could go in a separate file and be imported for invocation...)
 def get_itunes_data(artist_search):
     params = {}
     params["term"] = artist_search
@@ -19,7 +19,10 @@ def get_itunes_data(artist_search):
     data = json.loads(resp.text)
     return data
     
-
+## No models in this app -- this one doesn't deal with databases
+    
+## Route functions
+    
 @app.route('/')
 def hello_world():
     return 'Hello World!'
