@@ -4,7 +4,7 @@ A former SI 364 course homework assignment by Brendan Paul (@bdpaul99)
 
 ### The original task assigned (part 1 of 2)
 
-See HW3_Part1 directory for results.
+See `HW3Part1` directory for results -- the "answer" to this assignment part, which is an example of making a request to an AP in a Flask app.
 
 Edit the `SI364_HW3.py` file inside the `HW3Part1` directory to add routes to the basic Flask application that will match the templates in the `templates` subdirectory inside the `HW3Part1` folder.
 
