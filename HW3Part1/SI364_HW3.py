@@ -40,19 +40,6 @@ def artist_info():
         data = get_itunes_data(artist_to_search)
         return render_template('artist_info.html', objects = data['results'])
 
-@app.route('/artist_links')
-def artist_links():
-    
-    
-    return render_template('artist_links.html')
-
-@app.route('/specific/song/<artist_name>')
-def specific_artist(artist_name):
-    params = {}
-    params['term'] = artist_name
-    resp = requests.get('https://itunes.apple.com/search', params = params)
-    data = json.loads(resp.text)
-    return render_template('specific_artist.html', results= data['results'])
 
 if __name__=='__main__':
     app.run(debug=True)
