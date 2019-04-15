@@ -32,7 +32,7 @@ def hello_user(name):
 def artist_form():
     return render_template('artistform.html')
 
-@app.route('/artistinfo')
+@app.route('/artistinfo') # You would only get to this route -- should only -- by submitting the form found at /artistform
 def artist_info():
     if request.method == 'GET': # Just to ensure -- there should not be another case
         result = request.args
